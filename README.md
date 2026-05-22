@@ -5,7 +5,7 @@ Plataforma de control horario en producción, con clientes de pago activos y des
 Pensada para organizaciones que necesitan cumplir con la normativa sin depender de Excel, papel o software heredado.
 
 <p align="center">
-  <img src="docs/captura-1.png" width="100%" alt="Dashboard principal"/>
+  <img src="./docs/hero-dashboard.png" width="100%" alt="Dashboard principal"/>
 </p>
 
 > El código fuente de este producto se mantiene privado por motivos de seguridad y explotación comercial.  
@@ -39,7 +39,7 @@ Un SaaS moderno orientado a reducir fricción tanto para empresa como para emple
 ### El trabajador
 - Ficha desde móvil u ordenador
 - No necesita instalar aplicaciones
-- Tiene acceso simple y rápido a sus registros
+- Tiene acceso rápido y sencillo a sus registros
 
 ### El responsable
 - Gestiona usuarios, ausencias y horarios desde un panel centralizado
@@ -62,10 +62,10 @@ Un SaaS moderno orientado a reducir fricción tanto para empresa como para emple
 
 # Capturas del producto
 
-## Panel principal
+## Panel de administración
 
 <p align="center">
-  <img src="docs/captura-2.png" width="100%" alt="Panel principal"/>
+  <img src="./docs/admin-panel.png" width="100%" alt="Panel de administración"/>
 </p>
 
 ---
@@ -73,15 +73,15 @@ Un SaaS moderno orientado a reducir fricción tanto para empresa como para emple
 ## Vista móvil
 
 <p align="center">
-  <img src="docs/mobile-view2.png" width="320" alt="Vista móvil"/>
+  <img src="./docs/mobile-view.png" width="320" alt="Vista móvil"/>
 </p>
 
 ---
 
-## Gestión y administración
+## Experiencia móvil
 
 <p align="center">
-  <img src="docs/mobile-view.png" width="320" alt="Gestión y administración"/>
+  <img src="./docs/mobile-view2.png" width="320" alt="Experiencia móvil"/>
 </p>
 
 ---
