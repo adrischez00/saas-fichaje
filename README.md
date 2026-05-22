@@ -1,78 +1,151 @@
 # SaaS de Fichajes para PYMEs
 
-Plataforma de fichajes en producción, con varios clientes de pago activos.  
-Pensada para PYMEs que necesitan cumplir con la obligación legal de registro horario sin recurrir a hojas de cálculo ni a software heredado.
+Plataforma de control horario en producción, con clientes de pago activos y desarrollada para digitalizar el registro laboral de pequeñas y medianas empresas.
 
-> El código de este proyecto se mantiene **privado por motivos de seguridad y de negocio** (producto en explotación comercial). Este repositorio contiene la documentación, decisiones técnicas y capturas reales del producto.
+Pensada para organizaciones que necesitan cumplir con la normativa sin depender de Excel, papel o software heredado.
 
-**Más información:** [Portfolio – Proyecto Fichajes](https://portfolio-adrisanchez.vercel.app/proyecto/fichajes)  
-**Contacto comercial / demo:** adri.ia.dev@gmail.com
+<p align="center">
+  <img src="docs/captura-1.png" width="100%" alt="Dashboard principal"/>
+</p>
+
+> El código fuente de este producto se mantiene privado por motivos de seguridad y explotación comercial.  
+> Este repositorio actúa como showcase técnico del proyecto: arquitectura, decisiones técnicas y capturas reales del sistema.
+
+<br>
+
+🌐 **Portfolio:** [Proyecto Fichajes](https://portfolio-adrisanchez.vercel.app/proyecto/fichajes)  
+📧 **Contacto / Demo:** adri.ia.dev@gmail.com
 
 ---
 
-## El problema
+# El problema
 
-Toda empresa en España está obligada por ley a registrar la jornada de sus empleados. La mayoría de PYMEs lo resuelve con Excel, papel o sistemas heredados que no preparan los datos para una inspección y obligan a recomponer informes a mano cuando llega una auditoría de la Inspección de Trabajo.
+Toda empresa en España está obligada a registrar la jornada laboral de sus empleados.
 
-## La solución
+La mayoría de PYMEs siguen resolviéndolo mediante:
+- hojas de cálculo
+- documentos manuales
+- software antiguo
+- procesos poco preparados para auditorías
 
-Un SaaS web orientado a quitar fricción a empresa y empleado:
+Esto genera errores, pérdida de tiempo y dificultades cuando llega una inspección laboral.
 
-- El trabajador ficha desde móvil u ordenador, sin instalar nada.
-- El responsable gestiona horarios, ausencias y usuarios desde un panel limpio.
-- La empresa tiene en un clic los informes en el formato que pide la Inspección de Trabajo.
+---
 
-## Funcionalidades principales
+# La solución
 
-- Fichaje web responsive (móvil y escritorio)
-- Panel de administración con gestión de usuarios, turnos y ausencias
-- Exportaciones legales en CSV, PDF y XLSX listas para inspección
-- Multi-empresa: una sola plataforma gestiona varias organizaciones
-- Roles diferenciados (empleado, responsable, administrador)
-- Trazabilidad completa de cambios para auditoría
+Un SaaS moderno orientado a reducir fricción tanto para empresa como para empleado.
 
-## Capturas
+### El trabajador
+- Ficha desde móvil u ordenador
+- No necesita instalar aplicaciones
+- Tiene acceso simple y rápido a sus registros
+
+### El responsable
+- Gestiona usuarios, ausencias y horarios desde un panel centralizado
+- Exporta informes legales en segundos
+- Mantiene trazabilidad completa de cambios y acciones
+
+---
+
+# Funcionalidades principales
+
+- Fichaje responsive (móvil y escritorio)
+- Panel de administración multiempresa
+- Gestión de usuarios, horarios y ausencias
+- Exportaciones legales en CSV, PDF y XLSX
+- Roles y permisos diferenciados
+- Trazabilidad y auditoría de cambios
+- Arquitectura preparada para escalado SaaS
+
+---
+
+# Capturas del producto
+
+## Panel principal
 
 <p align="center">
-  <img src="docs/captura-1.png" width="700" alt="Vista de fichaje"/>
+  <img src="docs/captura-2.png" width="100%" alt="Panel principal"/>
 </p>
+
+---
+
+## Vista móvil
 
 <p align="center">
-  <img src="docs/captura-2.png" width="700" alt="Panel de administración"/>
+  <img src="docs/mobile-view2.png" width="320" alt="Vista móvil"/>
 </p>
 
-## Stack
+---
+
+## Gestión y administración
+
+<p align="center">
+  <img src="docs/mobile-view.png" width="320" alt="Gestión y administración"/>
+</p>
+
+---
+
+# Stack tecnológico
 
 | Capa | Tecnología |
 |---|---|
 | Frontend | Next.js · TypeScript · Tailwind · shadcn/ui |
 | Backend | FastAPI (Python) |
-| Base de datos | PostgreSQL en Neon · Prisma |
-| Infraestructura | Vercel · Cloud Run · Docker |
+| Base de datos | PostgreSQL · Neon · Prisma |
+| Infraestructura | Docker · Vercel · Cloud Run |
 | Autenticación | JWT con roles |
+| Exportaciones | PDF · XLSX · CSV |
 
-## Decisiones técnicas
+---
 
-**FastAPI en lugar de Node.** Tipado estricto con Pydantic y mejor rendimiento procesando exportaciones pesadas (PDF y XLSX con miles de registros mensuales por cliente).
+# Decisiones técnicas
 
-**Neon como base de datos.** Branching de base de datos para crear entornos de staging por cliente sin coste extra ni replicación manual.
+### FastAPI en lugar de Node.js
 
-**shadcn/ui en vez de librería cerrada.** Control total del código de cada componente, sin atarme a versiones de terceros y con tema consistente en todo el panel.
+Uso de tipado estricto mediante Pydantic y mejor rendimiento procesando exportaciones pesadas y operaciones concurrentes.
 
-**Exportaciones legales como ciudadano de primera.** Es la funcionalidad que más decide la venta: una PYME no contrata un fichaje por el fichaje, lo contrata por estar tranquila ante una inspección.
+---
 
-**Multi-tenant desde el principio.** Aislamiento por empresa a nivel de modelo y de permisos, no añadido a posteriori. Permite escalar el SaaS sin reescribir la base de datos.
+### Arquitectura multiempresa desde el inicio
 
-## Estado actual
+Separación lógica y permisos diseñados para soportar múltiples organizaciones sin rehacer el modelo de datos más adelante.
 
-- En producción
-- Varios clientes de pago activos
-- Mantenimiento y desarrollo de nuevas funcionalidades en curso
+---
 
-## ¿Quieres una demo o información?
+### Exportaciones como funcionalidad principal
 
-¿Eres una PYME y quieres simplificar el registro horario, o un reclutador interesado en mi perfil?
+La generación de informes preparados para inspección laboral es una de las funcionalidades más críticas del producto.
+
+El objetivo no es solo fichar, sino facilitar auditorías y reducir carga administrativa.
+
+---
+
+### shadcn/ui frente a librerías cerradas
+
+Control completo sobre los componentes visuales y consistencia de diseño en todo el panel.
+
+---
+
+### Neon y entornos de staging
+
+Uso de branching en base de datos para pruebas y despliegues controlados sin replicaciones manuales complejas.
+
+---
+
+# Estado actual
+
+- Producto en producción
+- Clientes reales activos
+- Desarrollo continuo de nuevas funcionalidades
+- Mantenimiento y soporte activo
+
+---
+
+# Contacto
+
+¿Buscas una demo, colaboración o información sobre el proyecto?
 
 📧 **adri.ia.dev@gmail.com**  
-🌐 [portfolio-adrisanchez.vercel.app](https://portfolio-adrisanchez.vercel.app)  
-💼 [LinkedIn](https://www.linkedin.com/in/adrian-sanchez-guerrero)
+🌐 **Portfolio:** https://portfolio-adrisanchez.vercel.app  
+💼 **LinkedIn:** https://www.linkedin.com/in/adrian-sanchez-guerrero
